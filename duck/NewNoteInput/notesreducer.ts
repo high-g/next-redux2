@@ -3,7 +3,7 @@ export interface NotesState {
 }
 
 const initialState = {
-  note: [],
+  notes: [],
 }
 
 type Action = {
