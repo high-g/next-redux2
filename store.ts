@@ -1,4 +1,11 @@
-import { notesReducer } from '@/duck/NewNoteInput/notesreducer.ts'
-import { createStore } from 'redux'
+import { notesReducer } from '@/duck/NewNoteInput/notesReducer'
+import { countReducer } from '@/duck/MyButton/countReducer'
+import { combineReducers, createStore } from 'redux'
 
-export const store = createStore(notesReducer)
+const rootReducer = combineReducers({
+  countReducer,
+  notesReducer,
+})
+
+export type RootState = ReturnType<typeof rootReducer>
+export const store = createStore(rootReducer)
